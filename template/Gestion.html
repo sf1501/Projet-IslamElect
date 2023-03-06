@@ -1,0 +1,56 @@
+{%  extends 'base_template.html' %}
+{% block titrePage %}
+    <title>IslamElect : Gestion Store</title>
+{% endblock %}
+
+{% block corps %}
+    <div  class ="cadreGestionAdim" id="promosAdmin" style="width: 100%;height: 33.33%;">
+                <h1 style="width: 12%;height: 10%;position: relative;top: 0.1%;left: 1%; ;text-align: center;">Promos</h1>
+
+                <div id="cadre_promos_img" style="width: 50%;height: 80%;background-color: royalblue;position: relative;left:25% ;top:0%;display: inline-flex; border-radius: 40% 0%;">
+                    <div id="cadre_imageProduit" style="width: 50%;height: 100%;border-right: 1px solid;">
+                        <img src="" width="100%" height="100%">
+                    </div>
+                    <div id="cadre_imagePInfosroduit" style="width: 50%;height: 100%;">
+                        <img src="" width="100%" height="100%">
+                    </div>
+                </div>
+    </div>
+
+    <div class ="cadreGestionAdim" id="CategoriesAdmin" style="width: 100%;height: 33.33%;border-bottom: 1px solid;">
+                 <h1 style="width: 15%;height: 10%;position: relative;top: 0.1%;left: 1%; ;text-align: center;">Categories</h1>
+
+                 <div id="cadre_promos_img" style="width: 100%;height: 80%;background-color: white;position: relative;left:0%;top: 0.1%;display: inline-flex;">
+                    <button id="btn_left" onclick="btnLeftCategorieClicked()" style="position: relative;left:1%;top : 45%;width: 3%;height: 10%;">
+                        <<
+                    </button>
+                    <div class=" cadre_imageCatalogue"  id="cadre_imageProduit" style="width: 20%;height: 100%;border-right: 1px solid;position: relative;left: 2%; background-color: skyblue;">
+                        <img src="" width="100%" height="100%">
+
+                    </div>
+
+                    <div  class=" cadre_imageCatalogue" id="cadre_imageProduit" style="width: 20%;height: 100%;border-right: 1px solid; position: relative;left: 5%; background-color: skyblue;">
+                        <img src="" width="100%" height="100%">
+
+                    </div>
+
+                    <div class=" cadre_imageCatalogue"  id="cadre_imageProduit" style="width: 20%;height: 100%;border-right: 1px solid; position: relative;left: 8%; background-color: skyblue;">
+                        <img src="" width="100%" height="100%">
+
+                    </div>
+
+                    <div  class=" cadre_imageCatalogue" id="cadre_imageProduit" style="width: 20%;height: 100%;border-right: 1px solid; position: relative;left: 11%; background-color: skyblue;">
+                        <img src="" width="100%" height="100%">
+
+                    </div>
+                    <button id="btn_right" onclick="btnRightCategorieClicked()" style="position: relative;left:12%;top : 45%;width: 3%;height: 10%;">
+                        >>
+                    </button>
+                </div>
+    </div>
+    <div style="width:100%;height:33.33%;background-color:red;border-bottom:solid ">
+
+    </div>
+
+
+{% endblock %}

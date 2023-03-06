@@ -1,0 +1,178 @@
+{% extends 'catalogue.html' %}
+
+
+{% block corps %}
+{% block menuCategorie %}
+        <div id="cadreCatgeorie" style="width: 100%;height:20%;background-color: royalblue;position:relative;overflow-x:auto;white-space:nowrap;overflow-y:hidden">
+
+            {% for categorie in categories %}
+            <button id="cadre_imageProduit" style="width: 20%;height: 80%;border-right: 1px solid;position: relative;margin-right :2%;margin-left :2%;top:10%; background-color: white;" >
+            <div class=" cadre_imageCatalogue"   style="width: 100%;height: 100%">
+                <a href="/catalogue/categorie/{{categorie.name}}">
+                    <img src="{{ categorie.image.url }}" alt="{{ categorie.name }}" width="100%" height="100%" title="{{ categorie.name }}">
+
+                </a>
+            </div>
+            </button>
+            {% endfor %}
+
+        </div>
+        {% endblock %}
+{% block cadreDynamiquePageCatalogue %}
+
+    <div id="cadreDynamiquePageCatalogue"  style="width: 100%;height:80%;background-color: transoarent;position:relative">
+
+        <div id="cadreDescriptionProduit" style="height :25%;width:100%;background-color:transparent;display:inline-flex">
+            <img src=" {{ prod.image.url }}" width="25%" height="90%" style="position:relative;left : 5%;top:5%">
+            <div id="CadreInfosProduit" style="width:60%;height:90%;background-color:transparent;
+                   position:relative;left:10%;top:5%">
+                <div id="etageNom" style="width:100%;height:33.33%;background-color:transparent;display:inline-flex">
+                    <LABEL style="color:black;background-color:transparent;width:45%;height:100%;;text-align:center">
+                        <h2>
+                            Nom
+                        </h2>
+                    </LABEL>
+                    <LABEL style="color:black;background-color:transparent;width:10%;height:100%;;text-align:center">
+                        <h2>
+                            :
+                        </h2>
+                    </LABEL>
+                     <LABEL style="color:black;background-color:transparent;width:45%;height:100%;text-align:center">
+                        <h3>
+                            {{ prod.name }}
+                        </h3>
+                    </LABEL>
+                </div>
+                <div id="etageMark" style="width:100%;height:33.33%;background-color:transparent;display:inline-flex">
+                    <LABEL style="color:black;background-color:transparent;width:45%;height:100%;text-align:center">
+                       <h2>
+                            Marque
+                        </h2>
+                    </LABEL>
+                    <LABEL style="color:black;background-color:blutransparente;width:10%;height:100%;;text-align:center">
+                        <h2>
+                            :
+                        </h2>
+                    </LABEL>
+                     <LABEL style="color:black;background-color:transparent;width:45%;height:100%;text-align:center">
+                        <h3>
+                            {{ prod.mark }}
+                        </h3>
+                    </LABEL>
+                </div>
+                <div id="etageQuantite" style="width:100%;height:33.33%;background-color:transparent;display:inline-flex">
+                    <LABEL style="color:black;background-color:transparent;width:45%;height:100%;text-align:center">
+                        <h2>
+                            Quantité
+                        </h2>
+                    </LABEL>
+                    <LABEL style="color:black;background-color:transparent;width:10%;height:100%;;text-align:center">
+                        <h2>
+                            :
+                        </h2>
+                    </LABEL>
+                    <LABEL style="color:black;background-color:transparent;width:45%;height:100%;text-align:center">
+                        <h3>
+                            {{ prod.quantite }} {{ prod.unite_quantite }}
+                        </h3>
+                    </LABEL>
+                </div>
+            </div>
+        </div>
+
+        <div id="cadreCaracteristiqueProduit" style="width:100%;height:38%;background-color:lightskyblue;position:relative;
+                            top:2%;border-radius:20% 0%">
+            <div id="etageApropos" style="width:100%;height:33.33%;background-color:transparent;display:inline-flex">
+                    <LABEL style="color:black;background-color:transparent;width:35%;height:100%;;text-align:center;">
+                        <h2>
+                            A propos de cet article
+                        </h2>
+                    </LABEL>
+                    <LABEL style="color:black;background-color:transparent;width:10%;height:100%;;text-align:center">
+                        <h2>
+                            :
+                        </h2>
+                    </LABEL>
+                     <LABEL style="color:black;background-color:transparent;width:50%;height:94%;text-align:center;">
+
+                         <p style="word-wrap:break-word;margin:5%" >
+                             <h3>
+                                {{ prod.description }}
+                             </h3>
+                         </p>
+                    </LABEL>
+            </div>
+            <div id="etageSPecification" style="width:100%;height:33.33%;background-color:transparent;display:inline-flex">
+                    <LABEL style="color:black;background-color:transparent;width:35%;height:100%;text-align:center">
+                       <h2>
+                            Caractérisation
+                        </h2>
+                    </LABEL>
+                    <LABEL style="color:black;background-color:blutransparente;width:10%;height:100%;;text-align:center">
+                        <h2>
+                            :
+                        </h2>
+                    </LABEL>
+                     <LABEL style="color:black;background-color:transparent;width:35%;height:100%;text-align:center;">
+                        <h3>
+                            {{ prod.specification }}
+                        </h3>
+                    </LABEL>
+                    <LABEL style="color:black;background-color:transparent;width:10%;height:100%; ">
+                        <a href="{{ prod.ficheTechnique.url }}" target="_blank" style="position:relative;
+                            top:20%">
+                            fiche technique
+                        </a>
+                    </LABEL>
+            </div>
+            <div id="etageSPecification" style="width:100%;height:33.33%;background-color:transparent;display:inline-flex">
+                    <LABEL style="color:black;background-color:transparent;width:35%;height:100%;text-align:center">
+                       <h2>
+                            Dimension : L * l * h en cm
+                        </h2>
+                    </LABEL>
+                    <LABEL style="color:black;background-color:blutransparente;width:10%;height:100%;;text-align:center">
+                        <h2>
+                            :
+                        </h2>
+                    </LABEL>
+                     <LABEL style="color:black;background-color:transparent;width:35%;height:100%;text-align:center;">
+                        <h3>
+                            {{ prod.dimension }}
+                        </h3>
+                    </LABEL>
+
+            </div>
+        </div>
+        <div id="cadeProduitSimilaire" style="height:32%;width:100%;position:absolute;bottom: 2%">
+            <h1 style="color:red;height:10%;width:50%;position:relative;left:3%" >Produit Similaire</h1>
+            <div id="ProduitSimilaire" style="height:70%;width:90%;background-color:transparent;border:solid;
+                position:relative;left:5%;display:inline-flex">
+                <div class="cadreUnProduitSimilaire" style="width:20%;height:80%;position:relative;margin-left:10%;top:10%">
+                    <button style="width:100%;height:100%;">
+                        <a href="/catalogue/categorie/{{ ps.categorie }}/produit/{{ ps.name }}" width="100%" height="100%">
+                        <img src="{{ ps.image.url }}" width="100%" height="100%" title="{{ ps.name }}">
+                        </a>
+                    </button>
+                </div>
+                <div class="cadreUnProduitSimilaire" style="width:20%;height:80%;position:relative;margin-left:10%;top:10%">
+                    <button style="width:100%;height:100%;">
+                        <a href="/catalogue/categorie/{{ ps2.categorie }}/produit/{{ ps2.name }}" width="100%" height="100%">
+                        <img src="{{ ps2.image.url }}" width="100%" height="100%" title="{{ ps2.name }}">
+                        </a>
+                    </button>
+                </div>
+                <div class="cadreUnProduitSimilaire" style="width:20%;height:80%;position:relative;margin-left:10%;top:10%">
+                    <button style="width:100%;height:100%;">
+                        <a href="/catalogue/categorie/{{ ps3.categorie }}/produit/{{ ps3.name }}" width="100%" height="100%">
+                        <img src="{{ ps3.image.url }}" width="100%" height="100%" title="{{ ps3.name }}">
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% endblock %}

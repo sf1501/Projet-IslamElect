@@ -1,0 +1,73 @@
+{%extends 'base_template.html' %}
+
+{% block titrePage %}
+    <title>IslamElect : Catalogue</title>
+{% endblock %}
+{% block corps%}
+        {% block menuCategorie %}
+        <div id="cadreCatgeorie" style="width: 100%;height:20%;background-color: royalblue;position:relative;overflow-x:auto;white-space:nowrap;overflow-y:hidden">
+
+            {% for categorie in categories %}
+            <button id="cadre_imageProduit" style="width: 20%;height: 80%;border-right: 1px solid;position: relative;margin-right :2%;margin-left :2%;top:10%; background-color: white;" >
+            <div class=" cadre_imageCatalogue"   style="width: 100%;height: 100%">
+                <a href="/catalogue/categorie/{{categorie.name}}">
+                    <img src="{{ categorie.image.url }}" alt="{{ categorie.name }}" width="100%" height="100%" title="{{ categorie.name }}">
+
+                </a>
+            </div>
+            </button>
+            {% endfor %}
+
+        </div>
+        {% endblock %}
+        {% block cadreDynamiquePageCatalogue %}
+        <div id="cadreDynamiquePageCatalogue"  style="width: 100%;height:80%;background-color: transparent;position:relative;">
+
+             <div class="etageProduit" style="width: 100%; height: 33.5%;background-color: transparent;position:relative;top:0%;display:inline-flex">
+                 {% for produit in produitE1 %}
+                    <div class=" cadreProduit"  style="width: 20%;height: 80%;position: relative;margin-left: 4%;top:10%; background-color: transparent;">
+                        <img src="{{ produit.image.url }}" alt="{{ produit.name }}" title="{{ produit.name }}"  class="imageProduit" id="imageProduit1" style="width: 100%;height:70%;background-color: skyblue">
+                        <div class="cadreNomProduit" id="cadreNomProduit1" style="width: 100%;height:28%;position: relative; top: 1%;">
+                            <button  type="button" style="width:100%;height:100%;border-radius: 50%;" >
+                                <a href="/catalogue/categorie/{{ produit.categorie }}/produit/{{ produit.name }}">
+                                    {{ produit.name }}
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                 {% endfor %}
+             </div>
+            <div class="etageProduit" style="width: 100%; height: 33.5%;background-color: transparent;display: inline-flex;position:relative;top:0%">
+                 {% for produit in produitE2 %}
+                    <div class=" cadreProduit"  style="width: 20%;height: 80%;;position: relative;margin-left: 4%;top:10%; background-color: transparent;">
+                        <img src="{{ produit.image.url }}" alt="{{ produit.name }}" title="{{ produit.name }}"  class="imageProduit" id="imageProduit1" style="width: 100%;height:70%;background-color: skyblue">
+                        <div class="cadreNomProduit" id="cadreNomProduit1" style="width: 100%;height:28%;position: relative; top: 1%;">
+                            <button  type="button" style="width:100%;height:100%;border-radius: 50%;" >
+                                <a href="/catalogue/categorie/{{ produit.categorie }}/produit/{{ produit.name }}">
+                                    {{ produit.name }}
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                 {% endfor %}
+            </div>
+            <div class="etageProduit" style="width: 100%; height: 33.5%;background-color: transparent;display: inline-flex;position:relative;top:0%">
+                 {% for produit in produitE3 %}
+                    <div class=" cadreProduit"  style="width: 20%;height: 80%;;position: relative;margin-left: 4%;top:10%; background-color: transparent;">
+                        <img src="{{ produit.image.url }}" alt="{{ produit.name }}" title="{{ produit.name }}"  class="imageProduit" id="imageProduit1" style="width: 100%;height:70%;background-color: skyblue">
+                        <div class="cadreNomProduit" id="cadreNomProduit1" style="width: 100%;height:28%;position: relative; top: 1%;">
+                            <button  type="button" style="width:100%;height:100%;border-radius: 50%;" >
+                                <a href="/catalogue/categorie/{{ produit.categorie }}/produit/{{ produit.name }}">
+                                    {{ produit.name }}
+                                </a>
+                            </button>
+                        </div>
+                    </div>
+                 {% endfor %}
+            </div>
+
+        </div>
+        {% endblock %}
+
+
+ {% endblock %}
